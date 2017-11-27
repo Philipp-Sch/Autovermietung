@@ -16,12 +16,14 @@ namespace Autovermietung
         private Graphics g;
         private RegisterForm registerForm;
         private RocketForm mainForm;
+        private DbManager dbManager;
 
         public RocketForm()
         {
             InitializeComponent();
             mainForm = this;
-            registerForm = new RegisterForm();
+            dbManager = new DbManager();
+            registerForm = new RegisterForm(dbManager);
         }
 
         private void rocketForm_Load(object sender, EventArgs e)

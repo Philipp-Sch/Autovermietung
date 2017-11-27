@@ -44,6 +44,7 @@
             this.registerButton.TabIndex = 0;
             this.registerButton.Text = "Registieren";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // accountnameLabel
             // 
@@ -74,6 +75,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(93, 34);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(101, 20);
             this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);

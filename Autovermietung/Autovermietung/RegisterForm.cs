@@ -13,29 +13,34 @@ namespace Autovermietung
     public partial class RegisterForm : Form
     {
         private string encrypted;
+        private DbManager dbManager;
 
-        public RegisterForm()
+        public RegisterForm(DbManager dbmanager)
         {
             InitializeComponent();
             encrypted = "";
+            dbManager = dbmanager;
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
-            write(e.ToString(), false);
+            
         }
 
         private void password2TextBox_TextChanged(object sender, EventArgs e)
         {
-            write(e.ToString(), true);
+            
         }
 
-        private void write(string password, bool box) //false = textbox 1, true = textbox 2
+        private void registerButton_Click(object sender, EventArgs e)
         {
-            if (!box)
+            if (passwordTextBox == password2TextBox && dbManager.UserAvailable(accountnameTextBox.Text)) //Abfrage nach Verfügbarkeit des Benutzernamens
             {
-                encrypted += passwordTextBox.Text[passwordTextBox.Text.Length];
-                passwordTextBox.Text = passwordTextBox.Text.Remove(passwordTextBox.Text.Length - 1);
+
+            }
+            else
+            {
+                MessageBox.Show("Passwort stimmt nicht überein oder dein Benutzername ist schon vergeben");
             }
         }
     }
