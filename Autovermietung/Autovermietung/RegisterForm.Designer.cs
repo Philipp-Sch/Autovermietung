@@ -38,12 +38,13 @@
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(199, 227);
+            this.registerButton.Location = new System.Drawing.Point(199, 97);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(73, 23);
-            this.registerButton.TabIndex = 0;
+            this.registerButton.TabIndex = 5;
             this.registerButton.Text = "Registieren";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButtonClick);
             // 
             // accountnameLabel
             // 
@@ -51,7 +52,7 @@
             this.accountnameLabel.Location = new System.Drawing.Point(12, 9);
             this.accountnameLabel.Name = "accountnameLabel";
             this.accountnameLabel.Size = new System.Drawing.Size(75, 13);
-            this.accountnameLabel.TabIndex = 1;
+            this.accountnameLabel.TabIndex = 0;
             this.accountnameLabel.Text = "Benutzername";
             // 
             // accountnameTextBox
@@ -59,7 +60,7 @@
             this.accountnameTextBox.Location = new System.Drawing.Point(93, 6);
             this.accountnameTextBox.Name = "accountnameTextBox";
             this.accountnameTextBox.Size = new System.Drawing.Size(101, 20);
-            this.accountnameTextBox.TabIndex = 2;
+            this.accountnameTextBox.TabIndex = 1;
             // 
             // passwordLabel
             // 
@@ -67,30 +68,31 @@
             this.passwordLabel.Location = new System.Drawing.Point(12, 37);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(50, 13);
-            this.passwordLabel.TabIndex = 3;
+            this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Passwort";
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(93, 34);
+            this.passwordTextBox.MaxLength = 20;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(101, 20);
-            this.passwordTextBox.TabIndex = 4;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
+            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // password2TextBox
             // 
             this.password2TextBox.Location = new System.Drawing.Point(93, 60);
             this.password2TextBox.Name = "password2TextBox";
             this.password2TextBox.Size = new System.Drawing.Size(101, 20);
-            this.password2TextBox.TabIndex = 5;
-            this.password2TextBox.TextChanged += new System.EventHandler(this.password2TextBox_TextChanged);
+            this.password2TextBox.TabIndex = 4;
+            this.password2TextBox.UseSystemPasswordChar = true;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(284, 132);
             this.Controls.Add(this.password2TextBox);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.passwordLabel);

@@ -22,38 +22,44 @@ namespace Autovermietung
             InitializeComponent();
             mainForm = this;
             registerForm = new RegisterForm();
+            registerForm.FormClosed += registerFormFormClosed;
         }
 
-        private void rocketForm_Load(object sender, EventArgs e)
+        void registerFormFormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rocketFormLoad(object sender, EventArgs e)
         {
             
         }
 
-        private void rocketTitlePanel_Paint(object sender, PaintEventArgs e)
+        private void rocketTitlePanelPaint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(new SolidBrush(Color.Red),
                 new Rectangle(rocketTitlePanel.Width / 4, rocketTitlePanel.Height / 16,
                     rocketTitlePanel.Width / 16, 3 * rocketTitlePanel.Height / 2));
-            Point[] p = new Point[3];
-            p[0] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 16 - 1, 
+            Point[] points = new Point[3];
+            points[0] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 16 - 1, 
                 rocketTitlePanel.Height / 16 + 11);
-            p[1] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 16,
+            points[1] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 16,
                 rocketTitlePanel.Height / 16 + rocketTitlePanel.Height / 2 + 10);
-            p[2] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 4,
+            points[2] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 4,
                 rocketTitlePanel.Height / 16 + rocketTitlePanel.Height / 4 + 10);
-            e.Graphics.DrawClosedCurve(new Pen(new SolidBrush(Color.Red), 20), p);
-            Point[] p1 = new Point[5];
-            p1[0] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 16 - 1,
+            e.Graphics.DrawClosedCurve(new Pen(new SolidBrush(Color.Red), 20), points);
+            points = new Point[5];
+            points[0] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 16 - 1,
                 rocketTitlePanel.Height / 2);
-            p1[1] = new Point(rocketTitlePanel.Width / 4, 
+            points[1] = new Point(rocketTitlePanel.Width / 4, 
                 rocketTitlePanel.Height / 2 + rocketTitlePanel.Height / 16);
-            p1[2] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 4,
+            points[2] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 4,
                 3 * rocketTitlePanel.Height / 2);
-            p1[3] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 4,
+            points[3] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 4,
                 rocketTitlePanel.Height / 16 + 3 * rocketTitlePanel.Height / 4);
-            p1[4] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 8,
+            points[4] = new Point(rocketTitlePanel.Width / 4 + rocketTitlePanel.Width / 8,
                 rocketTitlePanel.Height / 16 + 3 * rocketTitlePanel.Height / 4);
-            e.Graphics.FillPolygon(new SolidBrush(Color.Red), p1);
+            e.Graphics.FillPolygon(new SolidBrush(Color.Red), points);
         }
 
         private void loginButton_Click(object sender, EventArgs e)

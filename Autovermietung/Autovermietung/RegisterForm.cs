@@ -7,36 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Autovermietung
 {
     public partial class RegisterForm : Form
     {
-        private string encrypted;
 
         public RegisterForm()
         {
             InitializeComponent();
-            encrypted = "";
         }
 
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        private void registerButtonClick(object sender, EventArgs e)
         {
-            write(e.ToString(), false);
+            var a = SHA256(passwordTextBox.Text);
         }
 
-        private void password2TextBox_TextChanged(object sender, EventArgs e)
+        public String SHA256(String text)
         {
-            write(e.ToString(), true);
-        }
+            StringBuilder stringBuilder = new StringBuilder();
 
-        private void write(string password, bool box) //false = textbox 1, true = textbox 2
-        {
-            if (!box)
+            using (SHA256 sha256 = SHA256Managed.Create())
             {
-                encrypted += passwordTextBox.Text[passwordTextBox.Text.Length];
-                passwordTextBox.Text = passwordTextBox.Text.Remove(passwordTextBox.Text.Length - 1);
+                Byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(text));
+
+                foreach (Byte b in bytes)
+                    stringBuilder.Append(b.ToString("x2"));
             }
+
+            return stringBuilder.ToString();
         }
     }
 }

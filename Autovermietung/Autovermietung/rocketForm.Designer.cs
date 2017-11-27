@@ -41,7 +41,7 @@
             this.rocketTitlePanel.Name = "rocketTitlePanel";
             this.rocketTitlePanel.Size = new System.Drawing.Size(380, 231);
             this.rocketTitlePanel.TabIndex = 0;
-            this.rocketTitlePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.rocketTitlePanel_Paint);
+            this.rocketTitlePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.rocketTitlePanelPaint);
             // 
             // rocketTitleLabel
             // 
@@ -84,7 +84,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RocketForm";
             this.Text = "Rocketvermietung";
-            this.Load += new System.EventHandler(this.rocketForm_Load);
+            this.Load += new System.EventHandler(this.rocketFormLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
