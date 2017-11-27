@@ -1,6 +1,6 @@
 ﻿namespace Autovermietung
 {
-    partial class rocketForm
+    partial class RocketForm
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rocketForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RocketForm));
             this.rocketTitlePanel = new System.Windows.Forms.Panel();
             this.rocketTitleLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
@@ -37,7 +37,7 @@
             // 
             // rocketTitlePanel
             // 
-            this.rocketTitlePanel.Location = new System.Drawing.Point(59, 12);
+            this.rocketTitlePanel.Location = new System.Drawing.Point(48, 12);
             this.rocketTitlePanel.Name = "rocketTitlePanel";
             this.rocketTitlePanel.Size = new System.Drawing.Size(380, 231);
             this.rocketTitlePanel.TabIndex = 0;
@@ -54,23 +54,25 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(165, 262);
+            this.loginButton.Location = new System.Drawing.Point(143, 262);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(100, 30);
             this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Anmelden";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(165, 295);
+            this.registerButton.Location = new System.Drawing.Point(143, 298);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(100, 30);
             this.registerButton.TabIndex = 3;
             this.registerButton.Text = "Registrieren";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // rocketForm
+            // RocketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +82,7 @@
             this.Controls.Add(this.rocketTitleLabel);
             this.Controls.Add(this.rocketTitlePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "rocketForm";
+            this.Name = "RocketForm";
             this.Text = "Rocketvermietung";
             this.Load += new System.EventHandler(this.rocketForm_Load);
             this.ResumeLayout(false);
