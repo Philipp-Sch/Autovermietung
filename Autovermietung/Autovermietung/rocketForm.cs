@@ -24,6 +24,12 @@ namespace Autovermietung
             mainForm = this;
             dbManager = new DbManager();
             registerForm = new RegisterForm(dbManager);
+            registerForm.FormClosed += registerForm_FormClosed;
+        }
+
+        void registerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         private void rocketForm_Load(object sender, EventArgs e)

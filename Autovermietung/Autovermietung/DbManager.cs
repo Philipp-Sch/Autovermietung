@@ -8,16 +8,12 @@ using System.Security.Cryptography;
 
 namespace Autovermietung
 {
-    class DbManager
+    public class DbManager
     {
-        private MySqlConnection con;
+        private MySqlConnection con = new MySqlConnection(@"host=localhost;user=root;database=carsharing");
+        private StringBuilder stringBuilder = new StringBuilder();
 
-        public DbManager()
-        {
-            con = new MySqlConnection(@"host=localhost;user=root;database=carsharing");
-        }
-
-        public bool UserAvailable(string name)
+        public bool IsUserAvailable(string name)
         {
             bool available = false;
             try
@@ -40,7 +36,7 @@ namespace Autovermietung
             return available;
         }
 
-        public void Register(string name, string password)
+        public void RegisterUser(string name, string password)
         {
             try
             {
@@ -56,6 +52,18 @@ namespace Autovermietung
             {
                 con.Close();
             }
+        }
+
+        private string SHA256(string password)
+        {
+            using (SHA256 sha256 = SHA256Managed.Create())
+            {
+                Byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                foreach (Byte b in bytes)
+                    stringBuilder.Append(b.ToString("x2"));
+            }
+            return stringBuilder.ToString();
         }
     }
 }

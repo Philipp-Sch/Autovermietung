@@ -7,40 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Autovermietung
 {
     public partial class RegisterForm : Form
     {
         private string encrypted;
-        private DbManager dbManager;
 
         public RegisterForm(DbManager dbmanager)
         {
             InitializeComponent();
             encrypted = "";
-            dbManager = dbmanager;
         }
 
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        private void registerButtonClick(object sender, EventArgs e)
         {
-            
+            write(e.ToString(), false);
         }
 
-        private void password2TextBox_TextChanged(object sender, EventArgs e)
+        private void write(string password, bool box) //false = textbox 1, true = textbox 2
         {
-            
-        }
-
-        private void registerButton_Click(object sender, EventArgs e)
-        {
-            if (passwordTextBox == password2TextBox && dbManager.UserAvailable(accountnameTextBox.Text)) //Abfrage nach Verfügbarkeit des Benutzernamens
+            if (!box)
             {
-
-            }
-            else
-            {
-                MessageBox.Show("Passwort stimmt nicht überein oder dein Benutzername ist schon vergeben");
+                encrypted += passwordTextBox.Text[passwordTextBox.Text.Length];
+                passwordTextBox.Text = passwordTextBox.Text.Remove(passwordTextBox.Text.Length - 1);
             }
         }
     }
