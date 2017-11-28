@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>Z:\profile.V2\Documents\Visual Studio 2013\Projects\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarDetails.Designer.cs">
+      <DependentUpon>CarDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbManager.cs" />
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CarDetails.resx">
+      <DependentUpon>CarDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
