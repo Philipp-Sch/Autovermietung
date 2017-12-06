@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.producerLabel = new System.Windows.Forms.Label();
             this.producerTextBox = new System.Windows.Forms.TextBox();
             this.modelTextBox = new System.Windows.Forms.TextBox();
@@ -47,16 +46,8 @@
             this.trailerLabel = new System.Windows.Forms.Label();
             this.classTextBox = new System.Windows.Forms.TextBox();
             this.classLabel = new System.Windows.Forms.Label();
-            this.searchLabel = new System.Windows.Forms.Label();
             this.bookingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 28);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(126, 20);
-            this.searchTextBox.TabIndex = 1;
             // 
             // producerLabel
             // 
@@ -211,15 +202,6 @@
             this.classLabel.TabIndex = 6;
             this.classLabel.Text = "Fahrzeugklasse";
             // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(12, 9);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(44, 13);
-            this.searchLabel.TabIndex = 0;
-            this.searchLabel.Text = "Suchen";
-            // 
             // bookingButton
             // 
             this.bookingButton.Location = new System.Drawing.Point(271, 330);
@@ -235,7 +217,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 365);
             this.Controls.Add(this.bookingButton);
-            this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.classTextBox);
             this.Controls.Add(this.classLabel);
             this.Controls.Add(this.trailerTextBox);
@@ -254,7 +235,6 @@
             this.Controls.Add(this.modelLabel);
             this.Controls.Add(this.producerTextBox);
             this.Controls.Add(this.producerLabel);
-            this.Controls.Add(this.searchTextBox);
             this.Name = "CarDetails";
             this.Text = "Fahrzeugdetails";
             this.Load += new System.EventHandler(this.CarDetailscs_Load);
@@ -264,7 +244,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Label producerLabel;
         private System.Windows.Forms.TextBox producerTextBox;
         private System.Windows.Forms.TextBox modelTextBox;
@@ -283,7 +262,6 @@
         private System.Windows.Forms.Label trailerLabel;
         private System.Windows.Forms.TextBox classTextBox;
         private System.Windows.Forms.Label classLabel;
-        private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.Button bookingButton;
     }
 }
