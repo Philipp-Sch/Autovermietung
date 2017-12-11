@@ -37,6 +37,22 @@ namespace Autovermietung
             {
                 dbManager.RegisterUser(accountnameTextBox.Text, passwordTextBox.Text, firstNameTextBox.Text, surnameTextBox.Text, emailTextBox.Text, (int)monthNumericUpDown.Value, Convert.ToInt16(yearTextBox.Text), ibanTextBox.Text);
             }
+            else if (passwordTextBox.Text != password2TextBox.Text)
+            {
+                MessageBox.Show("Passwort ist falsch");
+            }
+            else if (!dbManager.IsUserAvailable(accountnameTextBox.Text))
+            {
+                MessageBox.Show("Username ist falsch");
+            }
+            else if (!drivingLicenseCheckBox.Checked)
+            {
+                MessageBox.Show("Führerschein ist falsch");
+            }
+            else
+            {
+                MessageBox.Show("Alter ist falsch");
+            }
         }
 
         private bool CheckForAge()

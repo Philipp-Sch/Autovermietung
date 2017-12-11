@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace Autovermietung
 {
@@ -18,11 +19,10 @@ namespace Autovermietung
             try
             {
                 con.Open();
-                MySqlCommand select = new MySqlCommand("SELECT Benutzername FROM User WHERE Benutzername=" + name, con);
-                MySqlDataReader reader = select.ExecuteReader();
-                if (!reader.Read())
+                using(var select = new MySqlCommand("SELECT EXISTS (SELECT * FROM User WHERE Benutzername='" + name + "')", con))
                 {
-                    return true;
+                    object exists = select.ExecuteScalar();
+                    return !Convert.ToBoolean(exists);
                 }
             }
             catch (Exception)
@@ -33,16 +33,14 @@ namespace Autovermietung
             {
                 con.Close();
             }
-            return false;
         }
 
         public void RegisterUser(string name, string password, string firstName, string surname, string email, int month, int year, string iban)
         {
             try
             {
-                con.Open();
                 MySqlCommand insert = new MySqlCommand(
-                    "INSERT INTO User(Benutzername, Passwort, E-Mail, Vorname, Nachname, Geburtsdatum, Führerschein, IBAN) VALUES(@a, @p, @e, @f, @s, @b, @d, @i)");
+                    "INSERT INTO User VALUES(@a, @p, @e, @f, @s, @b, @d, @i)");
                 insert.Parameters.AddWithValue("a", name);
                 insert.Parameters.AddWithValue("p", password);
                 insert.Parameters.AddWithValue("f", firstName);
@@ -54,11 +52,12 @@ namespace Autovermietung
                     insert.Parameters.AddWithValue("b", "DATE('MM.YYYY', '0" + month + "." + year + "')");
                 insert.Parameters.AddWithValue("i", iban);
                 insert.Parameters.AddWithValue("d", 1);
+                con.Open();
                 insert.ExecuteNonQuery();
+                MessageBox.Show(insert.ToString());
             }
             catch (Exception ex)
             {
-                
                 throw ex;
             }
             finally
