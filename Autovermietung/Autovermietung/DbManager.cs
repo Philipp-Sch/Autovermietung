@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace Autovermietung
 {
@@ -64,6 +65,51 @@ namespace Autovermietung
                     stringBuilder.Append(b.ToString("x2"));
             }
             return stringBuilder.ToString();
+        }
+
+
+
+
+        public List<Car> GetCars()
+        {
+            List<Car> carModels = new List<Car>();
+            using (MySqlConnection mySqlConnection = new MySqlConnection(@"host=localhost;user=root;database=carsharing"))
+            {
+                try
+                {
+                    mySqlConnection.Open();
+                    using (MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("Select * From fahrzeug", mySqlConnection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        mySqlDataAdapter.Fill(dataTable);
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            carModels.Add(new Car()
+                            {
+                                Producer = row.ItemArray[0].ToString(),
+                                Model = row.ItemArray[1].ToString(),
+                                CarClass = row.ItemArray[2].ToString(),
+                                Fuel = row.ItemArray[3].ToString(),
+                                Power = Convert.ToInt32(row.ItemArray[4]),
+                                Seats = Convert.ToInt32(row.ItemArray[5]),
+                                Trunk = Convert.ToInt32(row.ItemArray[6]),
+                                Gear = Convert.ToBoolean(row.ItemArray[7]),
+                                Trailer = Convert.ToBoolean(row.ItemArray[8])
+                            });
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return carModels;
+                }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
+            }
+            return carModels;      
         }
     }
 }

@@ -47,12 +47,13 @@
             this.classTextBox = new System.Windows.Forms.TextBox();
             this.classLabel = new System.Windows.Forms.Label();
             this.bookingButton = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // producerLabel
             // 
             this.producerLabel.AutoSize = true;
-            this.producerLabel.Location = new System.Drawing.Point(12, 87);
+            this.producerLabel.Location = new System.Drawing.Point(161, 89);
             this.producerLabel.Name = "producerLabel";
             this.producerLabel.Size = new System.Drawing.Size(51, 13);
             this.producerLabel.TabIndex = 2;
@@ -60,7 +61,7 @@
             // 
             // producerTextBox
             // 
-            this.producerTextBox.Location = new System.Drawing.Point(15, 103);
+            this.producerTextBox.Location = new System.Drawing.Point(164, 105);
             this.producerTextBox.Name = "producerTextBox";
             this.producerTextBox.ReadOnly = true;
             this.producerTextBox.Size = new System.Drawing.Size(100, 20);
@@ -68,7 +69,7 @@
             // 
             // modelTextBox
             // 
-            this.modelTextBox.Location = new System.Drawing.Point(15, 142);
+            this.modelTextBox.Location = new System.Drawing.Point(164, 144);
             this.modelTextBox.Name = "modelTextBox";
             this.modelTextBox.ReadOnly = true;
             this.modelTextBox.Size = new System.Drawing.Size(100, 20);
@@ -77,7 +78,7 @@
             // modelLabel
             // 
             this.modelLabel.AutoSize = true;
-            this.modelLabel.Location = new System.Drawing.Point(12, 126);
+            this.modelLabel.Location = new System.Drawing.Point(161, 128);
             this.modelLabel.Name = "modelLabel";
             this.modelLabel.Size = new System.Drawing.Size(38, 13);
             this.modelLabel.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             // powerTextBox
             // 
-            this.powerTextBox.Location = new System.Drawing.Point(15, 222);
+            this.powerTextBox.Location = new System.Drawing.Point(164, 224);
             this.powerTextBox.Name = "powerTextBox";
             this.powerTextBox.ReadOnly = true;
             this.powerTextBox.Size = new System.Drawing.Size(100, 20);
@@ -94,7 +95,7 @@
             // powerLabel
             // 
             this.powerLabel.AutoSize = true;
-            this.powerLabel.Location = new System.Drawing.Point(12, 205);
+            this.powerLabel.Location = new System.Drawing.Point(161, 207);
             this.powerLabel.Name = "powerLabel";
             this.powerLabel.Size = new System.Drawing.Size(47, 13);
             this.powerLabel.TabIndex = 8;
@@ -102,7 +103,7 @@
             // 
             // seatsTextBox
             // 
-            this.seatsTextBox.Location = new System.Drawing.Point(207, 103);
+            this.seatsTextBox.Location = new System.Drawing.Point(356, 105);
             this.seatsTextBox.Name = "seatsTextBox";
             this.seatsTextBox.ReadOnly = true;
             this.seatsTextBox.Size = new System.Drawing.Size(100, 20);
@@ -111,7 +112,7 @@
             // seatsLabel
             // 
             this.seatsLabel.AutoSize = true;
-            this.seatsLabel.Location = new System.Drawing.Point(204, 86);
+            this.seatsLabel.Location = new System.Drawing.Point(353, 88);
             this.seatsLabel.Name = "seatsLabel";
             this.seatsLabel.Size = new System.Drawing.Size(52, 13);
             this.seatsLabel.TabIndex = 10;
@@ -119,7 +120,7 @@
             // 
             // trunkTextBox
             // 
-            this.trunkTextBox.Location = new System.Drawing.Point(207, 143);
+            this.trunkTextBox.Location = new System.Drawing.Point(356, 145);
             this.trunkTextBox.Name = "trunkTextBox";
             this.trunkTextBox.ReadOnly = true;
             this.trunkTextBox.Size = new System.Drawing.Size(100, 20);
@@ -128,7 +129,7 @@
             // trunkLabel
             // 
             this.trunkLabel.AutoSize = true;
-            this.trunkLabel.Location = new System.Drawing.Point(204, 126);
+            this.trunkLabel.Location = new System.Drawing.Point(353, 128);
             this.trunkLabel.Name = "trunkLabel";
             this.trunkLabel.Size = new System.Drawing.Size(58, 13);
             this.trunkLabel.TabIndex = 12;
@@ -136,7 +137,7 @@
             // 
             // fuelTextBox
             // 
-            this.fuelTextBox.Location = new System.Drawing.Point(207, 183);
+            this.fuelTextBox.Location = new System.Drawing.Point(356, 185);
             this.fuelTextBox.Name = "fuelTextBox";
             this.fuelTextBox.ReadOnly = true;
             this.fuelTextBox.Size = new System.Drawing.Size(100, 20);
@@ -145,7 +146,7 @@
             // fuelLabel
             // 
             this.fuelLabel.AutoSize = true;
-            this.fuelLabel.Location = new System.Drawing.Point(204, 166);
+            this.fuelLabel.Location = new System.Drawing.Point(353, 168);
             this.fuelLabel.Name = "fuelLabel";
             this.fuelLabel.Size = new System.Drawing.Size(51, 13);
             this.fuelLabel.TabIndex = 14;
@@ -153,7 +154,7 @@
             // 
             // gearTextBox
             // 
-            this.gearTextBox.Location = new System.Drawing.Point(207, 223);
+            this.gearTextBox.Location = new System.Drawing.Point(356, 225);
             this.gearTextBox.Name = "gearTextBox";
             this.gearTextBox.ReadOnly = true;
             this.gearTextBox.Size = new System.Drawing.Size(100, 20);
@@ -162,7 +163,7 @@
             // gearLabel
             // 
             this.gearLabel.AutoSize = true;
-            this.gearLabel.Location = new System.Drawing.Point(204, 206);
+            this.gearLabel.Location = new System.Drawing.Point(353, 208);
             this.gearLabel.Name = "gearLabel";
             this.gearLabel.Size = new System.Drawing.Size(57, 13);
             this.gearLabel.TabIndex = 16;
@@ -170,7 +171,7 @@
             // 
             // trailerTextBox
             // 
-            this.trailerTextBox.Location = new System.Drawing.Point(207, 263);
+            this.trailerTextBox.Location = new System.Drawing.Point(356, 265);
             this.trailerTextBox.Name = "trailerTextBox";
             this.trailerTextBox.ReadOnly = true;
             this.trailerTextBox.Size = new System.Drawing.Size(100, 20);
@@ -179,7 +180,7 @@
             // trailerLabel
             // 
             this.trailerLabel.AutoSize = true;
-            this.trailerLabel.Location = new System.Drawing.Point(204, 246);
+            this.trailerLabel.Location = new System.Drawing.Point(353, 248);
             this.trailerLabel.Name = "trailerLabel";
             this.trailerLabel.Size = new System.Drawing.Size(97, 13);
             this.trailerLabel.TabIndex = 18;
@@ -187,7 +188,7 @@
             // 
             // classTextBox
             // 
-            this.classTextBox.Location = new System.Drawing.Point(15, 182);
+            this.classTextBox.Location = new System.Drawing.Point(164, 184);
             this.classTextBox.Name = "classTextBox";
             this.classTextBox.ReadOnly = true;
             this.classTextBox.Size = new System.Drawing.Size(100, 20);
@@ -196,7 +197,7 @@
             // classLabel
             // 
             this.classLabel.AutoSize = true;
-            this.classLabel.Location = new System.Drawing.Point(12, 165);
+            this.classLabel.Location = new System.Drawing.Point(161, 167);
             this.classLabel.Name = "classLabel";
             this.classLabel.Size = new System.Drawing.Size(81, 13);
             this.classLabel.TabIndex = 6;
@@ -204,18 +205,27 @@
             // 
             // bookingButton
             // 
-            this.bookingButton.Location = new System.Drawing.Point(271, 330);
+            this.bookingButton.Location = new System.Drawing.Point(420, 332);
             this.bookingButton.Name = "bookingButton";
             this.bookingButton.Size = new System.Drawing.Size(75, 23);
             this.bookingButton.TabIndex = 20;
             this.bookingButton.Text = "Buchen";
             this.bookingButton.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 13);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 342);
+            this.listBox1.TabIndex = 21;
+            // 
             // CarDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 365);
+            this.ClientSize = new System.Drawing.Size(502, 365);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.bookingButton);
             this.Controls.Add(this.classTextBox);
             this.Controls.Add(this.classLabel);
@@ -263,5 +273,6 @@
         private System.Windows.Forms.TextBox classTextBox;
         private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.Button bookingButton;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

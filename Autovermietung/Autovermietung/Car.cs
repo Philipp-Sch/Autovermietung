@@ -6,61 +6,84 @@ using System.Threading.Tasks;
 
 namespace Autovermietung
 {
-    class Car
+    public class Car
     {
         private string producer, model, carClass, fuel;
         private int power, seats, trunk;
         private bool gear, trailer; //automatik = false, manuell = true
 
 
-        public Car(string producer, string model, string carClass, string fuel, int power, int seats, int trunk, bool gear, bool trailer)
+        //public Car(string producer, string model, string carClass, string fuel, int power, int seats, int trunk, bool gear, bool trailer)
+        //{
+        //    this.producer = producer;
+        //    this.model = model;
+        //    this.carClass = carClass;
+        //    this.fuel = fuel;
+        //    this.power = power;
+        //    this.seats = seats;
+        //    this.trunk = trunk;
+        //    this.gear = gear;
+        //    this.trailer = trailer;
+        //}
+
+        public Car()
         {
-            this.producer = producer;
-            this.model = model;
-            this.carClass = carClass;
-            this.fuel = fuel;
-            this.power = power;
-            this.seats = seats;
-            this.trunk = trunk;
-            this.gear = gear;
-            this.trailer = trailer;
+
         }
 
-        public string getProducer()         //Hersteller
+
+        public string Producer
         {
-            return producer;
+            get { return producer; }
+            set { producer = value; }
         }
-        public string getModel()            //Modell
+
+        public string Model
         {
-            return model;
+            get { return model; }
+            set { model = value; }
         }
-        public string getCarClass()         //Fahrzeugklasse
+
+        public string CarClass
         {
-            return carClass;
+            get { return carClass; }
+            set { carClass = value; }
         }
-        public string getFuel()             //Treibstoff
+
+        public string Fuel
         {
-            return fuel;
+            get { return fuel; }
+            set { fuel = value; }
         }
-        public int getPower()               //Leistung
+
+        public int Power
         {
-            return power;
+            get { return power; }
+            set { power = value; }
         }
-        public int getSeats()               //Sitzplätze
+
+        public int Seats
         {
-            return seats;
+            get { return seats; }
+            set { seats = value; }
         }
-        public int getTrunk()               //Kofferraunm
+
+        public int Trunk
         {
-            return trunk;
+            get { return trunk; }
+            set { trunk = value; }
         }
-        public bool getGear()               //Gangschaltart
+
+        public bool Gear
         {
-            return gear;
+            get { return Gear; }
+            set { gear = value; }
         }
-        public bool getTrailer()            //Anhängerkupplung
+
+        public bool Trailer
         {
-            return trailer;
+            get { return trailer; }
+            set { trailer = value; }
         }
     }
 }
