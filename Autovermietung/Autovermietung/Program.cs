@@ -16,7 +16,7 @@ namespace Autovermietung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RocketForm());
+            Application.Run(new CarDetails());
         }
     }
 }
