@@ -12,39 +12,44 @@ namespace Autovermietung
 {
     public partial class CarDetails : Form
     {
-        private Car car;
-        private DbManager dbmanager;
+        private DbManager dbmanager = new DbManager();
 
         public CarDetails()
         {
             InitializeComponent();
-            
-            dbmanager = new DbManager();
         }
 
         private void CarDetailscs_Load(object sender, EventArgs e)
         {
-            listBox1.Items.AddRange(dbmanager.GetCars().ToArray());
+            carListBox.Items.AddRange(dbmanager.GetCars().ToArray());               //Die mit Objekten gefüllte Liste wird in die ListBox eingefügt
 
-            //producerLabel.Text = listBox1.SelectedItem.
-
-
-
-            //producerTextBox.Text = car.getProducer();
-            //modelTextBox.Text = car.getModel();
-            //classTextBox.Text = car.getCarClass();
-            //powerTextBox.Text = car.getPower().ToString();
-            //seatsTextBox.Text = car.getSeats().ToString();
-            //trunkTextBox.Text = car.getTrunk().ToString();
-            //fuelTextBox.Text = car.getFuel();
-            //if (car.getGear() == true)
-            //    gearTextBox.Text = "Manuell";
-            //else
-            //    gearTextBox.Text = "Automatik";
-            //if (car.getTrailer() == true)
-            //    trailerTextBox.Text = "Ja";
-            //else
-            //    trailerTextBox.Text = "Nein";
+#region Change TextBox.Text
+            producerTextBox.Text = ((Car)carListBox.SelectedItem).Producer;         //Die Werte werden je nach ausgewähltem Item in den TextBoxen angezeigt
+            modelTextBox.Text = ((Car)carListBox.SelectedItem).Model;
+            classTextBox.Text = ((Car)carListBox.SelectedItem).CarClass;
+            powerTextBox.Text = ((Car)carListBox.SelectedItem).Power.ToString();
+            seatsTextBox.Text = ((Car)carListBox.SelectedItem).Seats.ToString();
+            trunkTextBox.Text = ((Car)carListBox.SelectedItem).Trunk.ToString();
+            fuelTextBox.Text = ((Car)carListBox.SelectedItem).Fuel.ToString();
+            gearTextBox.Text = ((Car)carListBox.SelectedItem).Gear.ToString();
+            if(((Car)carListBox.SelectedItem).Gear)
+            {
+                gearTextBox.Text = "Manuell";
+            }
+            else
+            {
+                gearTextBox.Text = "Automatik";
+            }
+            if(((Car)carListBox.SelectedItem).Trailer)
+            {
+                trailerTextBox.Text = "Vorhanden";
+            }
+            else
+            {
+                trailerTextBox.Text = "Nicht Vorhanden";
+            }
+            
+#endregion
         }
     }
 }

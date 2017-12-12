@@ -13,19 +13,6 @@ namespace Autovermietung
         private bool gear, trailer; //automatik = false, manuell = true
 
 
-        //public Car(string producer, string model, string carClass, string fuel, int power, int seats, int trunk, bool gear, bool trailer)
-        //{
-        //    this.producer = producer;
-        //    this.model = model;
-        //    this.carClass = carClass;
-        //    this.fuel = fuel;
-        //    this.power = power;
-        //    this.seats = seats;
-        //    this.trunk = trunk;
-        //    this.gear = gear;
-        //    this.trailer = trailer;
-        //}
-
         public Car()
         {
 

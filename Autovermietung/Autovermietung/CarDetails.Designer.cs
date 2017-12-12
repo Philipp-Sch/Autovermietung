@@ -47,7 +47,7 @@
             this.classTextBox = new System.Windows.Forms.TextBox();
             this.classLabel = new System.Windows.Forms.Label();
             this.bookingButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.carListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // producerLabel
@@ -212,20 +212,20 @@
             this.bookingButton.Text = "Buchen";
             this.bookingButton.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // carListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 13);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 342);
-            this.listBox1.TabIndex = 21;
+            this.carListBox.FormattingEnabled = true;
+            this.carListBox.Location = new System.Drawing.Point(13, 13);
+            this.carListBox.Name = "carListBox";
+            this.carListBox.Size = new System.Drawing.Size(120, 342);
+            this.carListBox.TabIndex = 21;
             // 
             // CarDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 365);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.carListBox);
             this.Controls.Add(this.bookingButton);
             this.Controls.Add(this.classTextBox);
             this.Controls.Add(this.classLabel);
@@ -273,6 +273,6 @@
         private System.Windows.Forms.TextBox classTextBox;
         private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.Button bookingButton;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox carListBox;
     }
 }
