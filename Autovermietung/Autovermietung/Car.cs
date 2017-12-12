@@ -21,8 +21,8 @@ namespace Autovermietung
 
         public string Producer
         {
-            get { return producer; }
-            set { producer = value; }
+            get { return producer; }            //"Get" um einen Wert auszugeben
+            set { producer = value; }           //"Set" um einen Wert zu setzen/verändern
         }
 
         public string Model

@@ -19,11 +19,18 @@ namespace Autovermietung
             InitializeComponent();
         }
 
+        
+        /// <summary>
+        /// In der Listbox werden die Objekte gespeichert. Je nach ausgewähltem Item
+        /// werden die entsprechenden Daten des Objekts in den TextBoxen angezeigt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CarDetailscs_Load(object sender, EventArgs e)
         {
-            carListBox.Items.AddRange(dbmanager.GetCars().ToArray());               //Die mit Objekten gefüllte Liste wird in die ListBox eingefügt
+            #region Change TextBox.Text
 
-#region Change TextBox.Text
+            carListBox.Items.AddRange(dbmanager.GetCars().ToArray());               //Die mit Objekten gefüllte Liste wird in die ListBox eingefügt
             producerTextBox.Text = ((Car)carListBox.SelectedItem).Producer;         //Die Werte werden je nach ausgewähltem Item in den TextBoxen angezeigt
             modelTextBox.Text = ((Car)carListBox.SelectedItem).Model;
             classTextBox.Text = ((Car)carListBox.SelectedItem).CarClass;
@@ -32,6 +39,7 @@ namespace Autovermietung
             trunkTextBox.Text = ((Car)carListBox.SelectedItem).Trunk.ToString();
             fuelTextBox.Text = ((Car)carListBox.SelectedItem).Fuel.ToString();
             gearTextBox.Text = ((Car)carListBox.SelectedItem).Gear.ToString();
+
             if(((Car)carListBox.SelectedItem).Gear)
             {
                 gearTextBox.Text = "Manuell";
@@ -49,7 +57,7 @@ namespace Autovermietung
                 trailerTextBox.Text = "Nicht Vorhanden";
             }
             
-#endregion
+            #endregion
         }
     }
 }
