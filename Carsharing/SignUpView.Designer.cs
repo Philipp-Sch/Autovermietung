@@ -173,6 +173,7 @@
             this.signUpButton.TabIndex = 8;
             this.signUpButton.Text = "Sign Up";
             this.signUpButton.UseVisualStyleBackColor = true;
+            this.signUpButton.Click += new System.EventHandler(this.SignUpButtonClick);
             // 
             // SignUpView
             // 
@@ -198,6 +199,8 @@
             this.MaximizeBox = false;
             this.Name = "SignUpView";
             this.Text = "Sign Up";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignUpViewFormClosing);
+            this.Load += new System.EventHandler(this.SignUpViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 

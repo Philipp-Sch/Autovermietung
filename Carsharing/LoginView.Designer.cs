@@ -91,6 +91,7 @@
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.LoginButtonClick);
             // 
             // adminModeCheckBox
             // 
@@ -111,6 +112,7 @@
             this.signUpButton.TabIndex = 4;
             this.signUpButton.Text = "Sign Up";
             this.signUpButton.UseVisualStyleBackColor = true;
+            this.signUpButton.Click += new System.EventHandler(this.SignUpButtonClick);
             // 
             // LoginView
             // 
@@ -126,9 +128,12 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.welcomeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginView";
             this.Text = "Login";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.LoginViewHelpButtonClicked);
             this.ResumeLayout(false);
             this.PerformLayout();
 

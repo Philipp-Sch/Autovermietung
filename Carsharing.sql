@@ -1,42 +1,42 @@
-﻿DROP TABLE `car`;
-DROP TABLE `user`;
-DROP TABLE `location`;
+﻿DROP TABLE car;
+DROP TABLE location;
+DROP TABLE user;
 
 CREATE TABLE `car` (
-  `id` int(255) NOT NULL,
-  `name` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `make` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int(50) NOT NULL,
+  `name` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `make` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
   `power` int(255) NOT NULL,
   `seats` int(255) NOT NULL,
   `trunksize` int(255) NOT NULL,
-  `class` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gearbox` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fuel` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `class` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gearbox` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fuel` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
   `coupling` tinyint(1) NOT NULL,
-  `location_id` int(255) DEFAULT NULL,
-  `reserved` DATE NOT NULL,
-  `blocked` DATE NOT NULL,
-  `reservedby` varchar(256),
-  `blockedby` varchar(256)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `location_id` int(255),
+  `reserved` DATETIME NOT NULL,
+  `blocked` DATETIME NOT NULL,
+  `reservedby` varchar(50),
+  `blockedby` varchar(50)
+);
 
 CREATE TABLE `location` (
   `id` int(255) NOT NULL,
-  `postcode` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `street` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `postcode` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `street` TEXT COLLATE utf8mb4_unicode_ci NOT NULL
+);
 
 CREATE TABLE `user` (
-  `username` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `firstname` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `birthday` varchar(256) NOT NULL,
-  `iban` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birthday` TEXT COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `iban` TEXT COLLATE utf8mb4_unicode_ci NOT NULL,
   `admin` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 
 ALTER TABLE `car`
@@ -63,16 +63,6 @@ ALTER TABLE `car`
 ALTER TABLE `car`
   ADD FOREIGN KEY (`blockedby`) REFERENCES `user`(`username`);
   
-INSERT INTO `location` (`postcode`, `city`, `street`) VALUES ('524289', 'Köln', 'Rektor-Klein-Str');
+INSERT INTO `location` (`postcode`, `city`, `street`) VALUES ('', '', '');
 
-INSERT INTO `user` (`username`, `password`, `email`, `firstname`, `lastname`, `birthday`, `iban`, `admin`)
-VALUES ('anton', '�Γ-\"�\'�H!���%?t�&9Pa����', 'iah51pagel@gso-koeln.de', 'Anton', 'Pagel', '30.08.2000', 'DE45 2738 4028 2787 12', '1');
-
-INSERT INTO `user` (`username`, `password`, `email`, `firstname`, `lastname`, `birthday`, `iban`, `admin`)
-VALUES ('otto', '�gB��\\v��U�g�6#ȳ��E��x��F�', 'otto@gmail.com', 'Otto', 'Müller', '12.01.1998', 'DE48 2539 1425 9825 45', '0');
-
-INSERT INTO `car` (`name`, `make`, `power`, `seats`, `trunksize`, `class`, `gearbox`, `fuel`, `coupling`, `location_id`, `reserved`, `blocked`, `reservedby`, `blockedby`)
-VALUES ('E 350 d AMG', 'Mercedes-Benz', '258', '4', '40', 'B', 'Automatik', 'Diesel', '0', '1', '2017-11-14 20:12:30', '2017-12-22 23:00:54', 'anton', 'anton');
-
-INSERT INTO `car` (`name`, `make`, `power`, `seats`, `trunksize`, `class`, `gearbox`, `fuel`, `coupling`, `location_id`, `reserved`, `blocked`, `reservedby`, `blockedby`)
-VALUES ('Passat', 'Volkswagen', '90', '4', '50', 'D', 'Manuell', 'Benzin', '1', '1', '2017-11-14 20:12:30', '2017-12-22 23:00:54', 'otto', 'otto');
+INSERT INTO `user` (`username`, `password`, `email`, `firstname`, `lastname`, `birthday`, `iban`, `admin`) VALUES ('admin', "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", '', '', '', '', '', '1');
