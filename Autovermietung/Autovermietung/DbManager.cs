@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
-using System.Windows.Forms;
 
 namespace Autovermietung
 {
@@ -76,6 +75,55 @@ namespace Autovermietung
                     stringBuilder.Append(b.ToString("x2"));
             }
             return stringBuilder.ToString();
+        }
+
+
+
+        /// <summary>
+        /// Die dahrzeugdaten aus der Datenbank werden ausgelsen und in einer Liste gespeichert.
+        /// In der Liste sind mehrere Objekte der Klasse "Car"
+        /// </summary>
+        /// <returns>Eine Liste mit Car-Objekten</returns>
+        public List<Car> GetCars()
+        {
+            List<Car> carModels = new List<Car>();
+            using (MySqlConnection mySqlConnection = new MySqlConnection(@"host=localhost;user=root;database=carsharing"))          //Verbindung zur DB wir hergestellt
+            {
+                try
+                {
+                    mySqlConnection.Open();
+                    using (MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("Select * From fahrzeug", mySqlConnection))         //Die Daten werden ´mit dem SQL-Befehl ausgelesen
+                    {
+                        DataTable dataTable = new DataTable();
+                        mySqlDataAdapter.Fill(dataTable);
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            carModels.Add(new Car()                 //Die verschiedenen Car-Objekte werden in der Liste gespeichert
+                            {
+                                Producer = row.ItemArray[0].ToString(),
+                                Model = row.ItemArray[1].ToString(),
+                                CarClass = row.ItemArray[2].ToString(),
+                                Fuel = row.ItemArray[3].ToString(),
+                                Power = Convert.ToInt32(row.ItemArray[4]),
+                                Seats = Convert.ToInt32(row.ItemArray[5]),
+                                Trunk = Convert.ToInt32(row.ItemArray[6]),
+                                Gear = Convert.ToBoolean(row.ItemArray[7]),
+                                Trailer = Convert.ToBoolean(row.ItemArray[8])
+                            });
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
+            }
+            return carModels;           //Rückgabe der Liste
         }
     }
 }
