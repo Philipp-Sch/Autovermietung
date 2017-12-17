@@ -14,6 +14,7 @@ namespace Autovermietung
     public partial class RegisterForm : Form
     {
         private string encrypted;
+        private Reservieren reservieren = new Reservieren();
 
         public RegisterForm(DbManager dbmanager)
         {
@@ -33,6 +34,11 @@ namespace Autovermietung
                 encrypted += passwordTextBox.Text[passwordTextBox.Text.Length];
                 passwordTextBox.Text = passwordTextBox.Text.Remove(passwordTextBox.Text.Length - 1);
             }
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            reservieren.Verbindung();
         }
     }
 }

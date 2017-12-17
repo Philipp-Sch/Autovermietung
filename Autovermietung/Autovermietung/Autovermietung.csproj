@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>Z:\profile.V2\Documents\Visual Studio 2013\Projects\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,12 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="DbManager.cs" />
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservieren.cs" />
+    <Compile Include="Reservierungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservierungen.Designer.cs">
+      <DependentUpon>Reservierungen.cs</DependentUpon>
     </Compile>
     <Compile Include="RocketForm.cs">
       <SubType>Form</SubType>
@@ -64,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservierungen.resx">
+      <DependentUpon>Reservierungen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RocketForm.resx">
       <DependentUpon>RocketForm.cs</DependentUpon>

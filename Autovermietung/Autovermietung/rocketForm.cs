@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Autovermietung.Properties;
+using System.Diagnostics;
 
 namespace Autovermietung
 {
@@ -73,6 +74,19 @@ namespace Autovermietung
         {
             mainForm.Hide();
             registerForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Support e-Mail: iah51ucar@gso-koeln.de"); // zeigt an wen die e-Mail gesendet werden soll
+            Process.Start("www.google.de"); //Öffnet google
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainForm.Hide();
+            Reservierungen res = new Reservierungen();  
+            res.Show();
         }
     }
 }
