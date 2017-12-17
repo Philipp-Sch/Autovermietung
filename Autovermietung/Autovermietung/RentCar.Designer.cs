@@ -64,6 +64,8 @@ namespace Autovermietung
             this.endTimetextBox = new System.Windows.Forms.TextBox();
             this.endTimeLabel = new System.Windows.Forms.Label();
             this.zurückgebenButton = new System.Windows.Forms.Button();
+            this.autoTextBox = new System.Windows.Forms.TextBox();
+            this.autoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AusleihButton
@@ -331,7 +333,7 @@ namespace Autovermietung
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(411, 182);
+            this.dateTimePicker2.Location = new System.Drawing.Point(422, 218);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 35;
@@ -363,11 +365,29 @@ namespace Autovermietung
             this.zurückgebenButton.UseVisualStyleBackColor = true;
             this.zurückgebenButton.Click += new System.EventHandler(this.ZurückgebenButton_Click);
             // 
+            // autoTextBox
+            // 
+            this.autoTextBox.Location = new System.Drawing.Point(469, 170);
+            this.autoTextBox.Name = "autoTextBox";
+            this.autoTextBox.Size = new System.Drawing.Size(142, 20);
+            this.autoTextBox.TabIndex = 39;
+            // 
+            // autoLabel
+            // 
+            this.autoLabel.AutoSize = true;
+            this.autoLabel.Location = new System.Drawing.Point(466, 154);
+            this.autoLabel.Name = "autoLabel";
+            this.autoLabel.Size = new System.Drawing.Size(29, 13);
+            this.autoLabel.TabIndex = 40;
+            this.autoLabel.Text = "Auto";
+            // 
             // RocketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 363);
+            this.Controls.Add(this.autoLabel);
+            this.Controls.Add(this.autoTextBox);
             this.Controls.Add(this.zurückgebenButton);
             this.Controls.Add(this.endTimeLabel);
             this.Controls.Add(this.endTimetextBox);
@@ -449,6 +469,8 @@ namespace Autovermietung
         private System.Windows.Forms.TextBox endTimetextBox;
         private System.Windows.Forms.Label endTimeLabel;
         private System.Windows.Forms.Button zurückgebenButton;
+        private System.Windows.Forms.TextBox autoTextBox;
+        private System.Windows.Forms.Label autoLabel;
     }
 }
 

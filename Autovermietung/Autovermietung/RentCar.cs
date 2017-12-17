@@ -23,6 +23,7 @@ namespace Autovermietung
         {
             InitializeComponent();
             connectionString = @"host=localhost;user=root;database=carsharing"; //connnectionstring
+            autoTextBox.Text = CarListBox.SelectedItem.ToString(); //Der Text in der Autotextbox wird gleich dem ausgewählten Item in der CarlistBox gesetzt
         }
 
         private void AusleihButton_Click(object sender, EventArgs e)
