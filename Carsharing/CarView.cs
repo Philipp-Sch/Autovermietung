@@ -146,9 +146,16 @@ namespace Carsharing
                 }
                 carModel.Name = nameTextBox.Text;
                 carModel.Make = makeTextBox.Text;
-                carModel.Power = Convert.ToInt32(powerTextBox.Text);
-                carModel.Seats = Convert.ToInt32(seatsTextBox.Text);
-                carModel.Trunksize = Convert.ToInt32(trunksizeTextBox.Text);
+                try
+                {
+                    carModel.Power = Convert.ToInt32(powerTextBox.Text);
+                    carModel.Seats = Convert.ToInt32(seatsTextBox.Text);
+                    carModel.Trunksize = Convert.ToInt32(trunksizeTextBox.Text);
+                }
+                catch
+                {
+                    return;
+                }
                 carModel.CarClass = classTextBox.Text;
                 carModel.Gearbox = gearboxTextBox.Text;
                 carModel.Fuel = fuelTextBox.Text;
