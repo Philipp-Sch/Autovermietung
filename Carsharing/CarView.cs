@@ -197,6 +197,8 @@ namespace Carsharing
                     controller.CarModels.Add(carModel);
                 }
             }
+            carListBox.DisplayMember = null;
+            carListBox.DisplayMember = "Name";
         }
     }
 }
